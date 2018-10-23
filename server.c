@@ -7,6 +7,7 @@
 #include <netinet/in.h>
 #include <string.h>
 #include <arpa/inet.h>
+#include "systemobd.cpp"
 
 //Funcion principal
 void server(int argc, char *argv[]){
@@ -58,19 +59,25 @@ void server(int argc, char *argv[]){
  	strcpy(enviar,"SERVIDOR CONECTADO...");
  	send(fd2, enviar, 1024,0);
  
+
 	//Ciclo para enviar y recibir mensajes
- 	while(1){
+	systemobd carlos;
+	while(1){
  	//El servidor espera el primer mensaje
  		recv(fd2,buf,1024,0);
  		if(strcmp(buf,"salir")==0){
  			break;
  		}
- 		printf("Cliente: %s\n",buf);
- 
+		
+		carlos.parseword(buf);
+        	//printf("Cliente: %s\n",buf);
+
+
  		//El cliente recibe el mensaje del servidor
- 		printf("Escribir mensaje: ");
+        	//printf("Escribir mensaje: ");
  		scanf("%*c%[^\n]",enviar2);
- 		send(fd2,enviar2,1024,0);
+
+        send(fd2,enviar2,1024,0);
  		if(strcmp(enviar2,"salir")==0){
  			break;
  		}

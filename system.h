@@ -4,9 +4,9 @@
 
 class command{
 public:
-	char name[20];
-	char type[5];
-	char payload[3];
+	char *name;
+	char *type;
+	char *payload;
 public:
 	command(){};
 	command(char *_name,char *_type,char *_payload){
@@ -16,7 +16,6 @@ public:
 	}
 	command(char *_name,char *_payload){
 		name=_name;
-		type="";
 		payload=_payload;
 	}
 
