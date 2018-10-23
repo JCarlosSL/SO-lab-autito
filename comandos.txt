@@ -1,0 +1,12 @@
+Engine RPM#rpm#0
+speedometer#km/h#0
+fuel level#%#100
+coolant temp#°c#0
+manifold pressure#kPa#0
+oil temperature#°c#0
+intake air temp#°c#0
+fuel pressure#kPa#0
+fuel flow rate#L/h#0
+battery voltage:#v#12.5
+DTC#P0133
+PID#0
