@@ -1,9 +1,9 @@
+#include <iostream>
 #include <list>
 #include <vector>
 #include <fstream>
 #include <algorithm>
 #include "system.h"
-#include <iostream>
 #include <string>
 
 class systemobd{
@@ -13,26 +13,29 @@ public:
 	systemobd(){
 		instrumento();
 	}
-	bool find(char *date){
-		std::list<command>::iterator it=comandos.begin();
-		while((it)!=comandos.end()){
-			if((*it).name==date) return 1;
+	bool find(std::list<command>::iterator _it,command date){
+		auto it=comandos.begin();
+		while(it!=comandos.end()){
+			if((*it)==date){
+				_it=it;
+				return 1;
+			}
 			++it;	
 		}
 		return 0;
 	}
-
 	void parseword(char *_words){
-		std::vector<char *> arr=split(_words," ");
-		char *_temp;
+		std::vector<std::string> arr=split(_words," ");
+		
+		std::list<command>::iterator it;
+		bool v=0;
 		for(int i=0;i<arr.size();++i){
-			if(find(arr[i])){
-				_temp=arr[i];
+			if(find(it,command(arr[i]))){
+				v=1;
 				break;
 			}
 		}
-		command dato(_temp,0);
-		printf("%s\n ",dato.name);
+		std::cout<<v<<std::endl;
 	}
 
 	void instrumento(){
@@ -43,7 +46,7 @@ public:
 		while(!file.eof()){
 			file.getline(name,20,'#');
 			file.getline(type,5,'#');
-			file.getline(value,10,'\n');
+			file.getline(value,10,'#');
 			command com(name,type,value);
 			comandos.push_back(com);
 		}

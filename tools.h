@@ -2,6 +2,7 @@
 #define TOOLS_H
 #include <vector>
 #include <string.h>
+#include <string>
 
 char * word(char *words,int &i){
 	char *p;
@@ -13,10 +14,10 @@ char * word(char *words,int &i){
 	return p;
 }
 
-std::vector<char *> split(char * str,std::string sep){
+std::vector<std::string> split(char *str,std::string sep){
 	char *current;
 	current=strtok(str,sep.c_str());
-	std::vector<char *> arr;
+	std::vector<std::string> arr;
 	while(current!=NULL){
 		arr.push_back(current);
 		current=strtok(NULL,sep.c_str());
