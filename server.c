@@ -68,14 +68,9 @@ void server(int argc, char *argv[]){
  		if(strcmp(buf,"cerrar")==0){
  			break;
  		}
-		
-		carlos.parseword(buf);
-        	//printf("Cliente: %s\n",buf);
-
-
- 		//El cliente recibe el mensaje del servidor
-        	//printf("Escribir mensaje: ");
- 		scanf("%*c%[^\n]",enviar2);
+		std::string sol;
+		carlos.menu_change(sol,buf);
+		strcpy(enviar2,sol.c_str());
 
         	send(fd2,enviar2,1024,0);
  		if(strcmp(enviar2,"cerrar")==0){
