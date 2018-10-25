@@ -54,7 +54,7 @@ void client(int argc, char *argv[]){
 	while(feof(archivo)==0){
 		//enviar informacion al servidor
  		fgets(enviar,100,archivo);
-		printf("infor %s\n",enviar);
+		printf("infor: %s\n",enviar);
 		send(fd,enviar,1024,0);
  
  		//recibe la informacion del servidor

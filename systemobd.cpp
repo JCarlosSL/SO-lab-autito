@@ -61,7 +61,9 @@ public:
 		}
 		if(v){
 			(*it).payload=arr[1];
+			std::cout<<(*it)<<std::endl;
 			if(arr[2]!="0"){
+				std::cout<<arr[2]<<std::endl;
 				menu_solution((*it).pos,solution);
 			}
 			else{
