@@ -46,22 +46,24 @@ void client(int argc, char *argv[]){
  		exit(-1);
  	}
  	printf("%s\n",buf);
-	//Ciclo para enviar y recibir mensajes
-	while(1){
- 		//El servidor espera el primer mensaje
- 		printf("Escribir mensaje: ");
- 		scanf("%*c%[^\n]",enviar);
- 		send(fd,enviar,1024,0);
- 		if(strcmp(enviar,"salir")==0){
- 			break;
- 		}
+
+	FILE* archivo;
+	archivo=fopen("cliente.txt","r");
+	//Ciclo para enviar y recibir informacion
+
+	while(feof(archivo)==0){
+		//enviar informacion al servidor
+ 		fgets(enviar,100,archivo);
+		printf("infor %s\n",enviar);
+		send(fd,enviar,1024,0);
  
- 		//El cliente recibe el mensaje del servidor
+ 		//recibe la informacion del servidor
  		recv(fd,buf,1024,0);
- 		if(strcmp(buf,"salir")==0){
+ 		if(strcmp(buf,"cerrar")==0){
  			break;
  		}
  		printf("Servidor: %s\n",buf);
 	}
+	fclose(archivo);
  //close(fd);
 }

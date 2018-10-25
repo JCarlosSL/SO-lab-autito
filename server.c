@@ -65,7 +65,7 @@ void server(int argc, char *argv[]){
 	while(1){
  	//El servidor espera el primer mensaje
  		recv(fd2,buf,1024,0);
- 		if(strcmp(buf,"salir")==0){
+ 		if(strcmp(buf,"cerrar")==0){
  			break;
  		}
 		
@@ -77,12 +77,10 @@ void server(int argc, char *argv[]){
         	//printf("Escribir mensaje: ");
  		scanf("%*c%[^\n]",enviar2);
 
-        send(fd2,enviar2,1024,0);
- 		if(strcmp(enviar2,"salir")==0){
+        	send(fd2,enviar2,1024,0);
+ 		if(strcmp(enviar2,"cerrar")==0){
  			break;
  		}
 	}
- //close(fd2);
- //close(fd);
 	//return 0;
 }

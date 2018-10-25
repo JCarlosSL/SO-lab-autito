@@ -1,0 +1,30 @@
+Engine RPM#100#problem engine#
+speedometer#217#0#
+fuel level#213#problem fuel#
+coolant temp#543#0#
+manifold pressure#213#0#
+oil temperature#37#0#
+intake air temp#125#0#
+fuel pressure#213#problem pressure#
+fuel flow rate#123#0#
+battery voltage#23#problem battery#
+Engine RPM#324#problem engine#
+speedometer#34#0#
+fuel level#232#problem fuel#
+coolant temp#143#0#
+manifold pressure#13#0#
+oil temperature#372#0#
+intake air temp#123#0#
+fuel pressure#213#problem pressure#
+fuel flow rate#23#0#
+battery voltage#123#problem battery#
+Engine RPM#14#problem engine#
+speedometer#345#0#
+fuel level#54#problem fuel#
+coolant temp#65#0#
+manifold pressure#12#0#
+oil temperature#234#0#
+intake air temp#234#0#
+fuel pressure#345#problem pressure#
+fuel flow rate#143#0#
+battery voltage#45#problem battery#

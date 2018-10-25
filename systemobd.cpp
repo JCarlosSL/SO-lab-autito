@@ -13,9 +13,9 @@ public:
 	systemobd(){
 		instrumento();
 	}
-	bool find(std::list<command>::iterator _it,command date){
+	bool find(std::list<command>::iterator &_it,command date){
 		auto it=comandos.begin();
-		while(it!=comandos.end()){
+		while((it)!=comandos.end()){
 			if((*it)==date){
 				_it=it;
 				return 1;
@@ -25,16 +25,14 @@ public:
 		return 0;
 	}
 	void parseword(char *_words){
-		std::vector<std::string> arr=split(_words," ");
-		
+		//std::vector<std::string> arr=split(_words," ");
+		std::vector<std::string> arr=split1(_words);
 		std::list<command>::iterator it;
 		bool v=0;
-		for(int i=0;i<arr.size();++i){
-			if(find(it,command(arr[i]))){
-				v=1;
-				break;
-			}
+		if(find(it,command(arr[0]))){
+			v=1;
 		}
+		std::cout<<v<<std::endl;
 	}
 
 	void instrumento(){
