@@ -15,13 +15,10 @@ void client(int argc, char *argv[]){
  	char buf[1024];
  	char enviar[1024];
  
-	system("clear");
- 
 	printf("ingrese la ip del servidor\n");
 	scanf("%s",ip);
  
-	printf("ingrese el puerto de conexion\n");
-	scanf("%d",&puerto);
+	puerto=8080;
  
  	//Socket
  	if ((fd=socket(AF_INET, SOCK_STREAM, 0))==-1){
@@ -59,9 +56,8 @@ void client(int argc, char *argv[]){
  
  		//recibe la informacion del servidor
  		recv(fd,buf,1024,0);
- 		if(strcmp(buf,"cerrar")==0){
- 			break;
- 		}
+ 		
+
  		printf("Servidor: %s\n",buf);
 	}
 	fclose(archivo);

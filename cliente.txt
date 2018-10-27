@@ -27,4 +27,4 @@ oil temperature#234#0#
 intake air temp#234#0#
 fuel pressure#345#problem pressure#
 fuel flow rate#143#0#
-battery voltage#45#problem battery#
+battery voltage#55#problem battery#
