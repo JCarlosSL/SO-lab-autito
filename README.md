@@ -1,4 +1,11 @@
 # SO
+
+# sistema operativo
+   linux
+# dependencias
+   QT 5, c, c++
+   install cmake, cmake
+
 # compilador 
 
 #  servidor:
